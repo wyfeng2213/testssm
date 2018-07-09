@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- 数据库驱动包，使用绝对路径 -->
+	<classPathEntry
+		location="D:/workspacesNew20150803/medicalcare/lib/mysql-connector-java-5.1.6-bin.jar" />
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/ssm" userId="root"
+			password="root">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.cmcc.medicalcare.model"
+			targetProject="D:/webAppcliation/testSSM/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.cmcc.medicalcare.mappers"
+			targetProject="D:/webAppcliation/testSSM/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- 不生成dao就不要这一句 -->
+		<!-- <javaClientGenerator type="XMLMAPPER" -->
+		<!-- targetPackage="com.isoftstone.core.dao.impl" targetProject="/home/wanggang/workspace/web/broadband/src/main/java/"> -->
+		<!-- <property name="enableSubPackages" value="true" /> -->
+		<!-- </javaClientGenerator> -->
+
+
+		<table tableName="message_reminding" domainObjectName="MessageReminding"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+		</table>
+
+
+	</context>
+</generatorConfiguration>  
