@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.demo.dao.BookDao">
+<mapper namespace="com.demo.entity.Book">
 	<!-- 目的：为dao接口方法提供sql语句配置 -->
 	<select id="queryById" resultType="Book" parameterType="long">
 		<!-- 具体的sql -->
@@ -16,6 +16,17 @@
 			book_id = #{bookId}
 	</select>
 	
+	<select id="getList2" resultType="Book">
+		SELECT
+			book_id,
+			name,
+			number
+		FROM
+			t_book
+		ORDER BY
+			book_id
+	</select>
+	
 	<select id="queryAll" resultType="Book">
 		SELECT
 			book_id,
@@ -27,6 +38,7 @@
 			book_id
 		LIMIT #{offset}, #{limit}
 	</select>
+	
 	
 	<update id="reduceNumber">
 		UPDATE t_book

@@ -12,6 +12,8 @@ public class BookDaoTest extends BaseTest {
 
 	@Autowired
 	private BookDao bookDao;
+	@Autowired
+	SlavebatisDAO slaveBatisDao;
 
 	@Test
 	public void testQueryById() throws Exception {
@@ -22,7 +24,8 @@ public class BookDaoTest extends BaseTest {
 
 	@Test
 	public void testQueryAll() throws Exception {
-		List<Book> books = bookDao.queryAll(0, 4);
+		// List<Book> books = bookDao.queryAll(0, 4);
+		List<Book> books = slaveBatisDao.getList(null);
 		for (Book book : books) {
 			System.out.println(book);
 		}

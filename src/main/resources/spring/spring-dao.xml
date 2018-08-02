@@ -47,4 +47,20 @@
 		<!-- 给出需要扫描Dao接口包 -->
 		<property name="basePackage" value="com.demo.dao" />
 	</bean>
+
+
+
+
+	<bean id="mybatisDAO" class="com.demo.dao.MybatisDAO"
+		scope="prototype">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean> 
+
+	<bean id="slavebatisDAO" class="com.demo.dao.SlavebatisDAO"
+		scope="prototype">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+
+
 </beans>
