@@ -1,0 +1,6 @@
+{
+
+    "version": "1.0.0",
+    "url": "https://api.github.com/v1",
+    "sampleUrl": "https://api.github.com/v1/test"
+}
