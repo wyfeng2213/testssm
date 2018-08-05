@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.demo.entity.User;
+
 @Controller
 @RequestMapping("/user")
 public class FileUploadController {
@@ -19,7 +21,7 @@ public class FileUploadController {
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@ResponseBody
 	private String fildUpload(@RequestParam(value = "file", required = false) MultipartFile imageFile,
-			HttpServletRequest request) throws Exception {
+			HttpServletRequest request,String name) throws Exception {
 		// 获取文件的上传路径
 		String uploadUrl = request.getSession().getServletContext().getRealPath("/") + "upload/";
 		// 获取上传的文件名字
@@ -31,6 +33,8 @@ public class FileUploadController {
 		}
 		System.out.println("文件上传到: " + uploadUrl + filename);
 
+		System.out.println("用户名: " + name);
+		System.out.println("密码: " + name);
 		File targetFile = new File(uploadUrl + filename);
 		if (!targetFile.exists()) {
 			try {

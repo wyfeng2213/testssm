@@ -17,11 +17,12 @@
 <body>
 	<form action="${basepath}user/upload" method="post"
 		enctype="multipart/form-data">
-		<label>头 像</label><input type="file" name="file" /><br /> <input
-			type="submit" value="提  交" />
+		<label>用户名：</label><input type="text" name="name" /><br /> <label>头
+			像</label><input type="file" name="file" /><br /> <input type="submit"
+			value="提  交" />
 	</form>
 
-	<img  src="${basePath}upload/u=415293130,2419074865&fm=27&gp=0.jpg">
+	<img src="${basePath}upload/u=415293130,2419074865&fm=27&gp=0.jpg">
 	<img width="100px" height="100px" src="${basePath}${imgpath}">
 
 	<!-- <form action="book/list" method="post">
