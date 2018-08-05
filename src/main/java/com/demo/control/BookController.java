@@ -33,7 +33,6 @@ public class BookController {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
 	private BookService bookService;
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
